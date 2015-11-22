@@ -8,15 +8,17 @@ import java.util.Scanner;
 public class Deviders {
 
 	public static void main(String []args) throws IOException{
-		Scanner in = new Scanner(new File("input.txt"));
-		FileWriter out = new FileWriter("output.txt");
+		Scanner in = new Scanner(System.in);
 		int num = in.nextInt();
 		for(int i = 1; i * i <= num; i++) {
 			if (num % i == 0) {
-				out.write(i + " " + num / i + " ");
+				if (i * i == num) {
+					System.out.print(i + " ");
+				} else {
+					System.out.print(i + " " + num / i + " ");
+				}
 			}
 		}
 		in.close();
-		out.close();
 	}
 }
